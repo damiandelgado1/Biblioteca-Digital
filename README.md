@@ -23,3 +23,7 @@ Option 5: When the user selects option 5 can return the requested book by the na
 which it was previously requested.
 
 Option 6: When the user selects option 6 this exit of library.
+
+¿What's solution?
+
+Improved interaction of a user with the Digital Library and management of books
