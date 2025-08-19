@@ -1,5 +1,14 @@
+#Importamos un JSON que guarda los Libros agregados en la Biblioteca
+import json
+
+#Abre el archivo JSON para escribir los datos correspondientes al guardar Libros
+try:
+    with open("libro.json", "r", encoding="utf-8") as f:
+        libroguardados=json.load(f)
+except FileNotFoundError:
+    libroguardados=[]
+
 #Indicamos que los Libros se guardaran en una Lista
-libroguardados=[]
 libroencontrado=False
 
 #Se crea un Menu de Opciones
@@ -114,5 +123,8 @@ while(True):
 
         #Al seleccionar la Opcion N°6 el cliente abandona la Biblioteca
         case 6:
+            #Al finalizar el programa, los datos correspondientes a los Libros agregados se guardan en el JSON manteniendo estructura
+            with open("libro.json", "w", encoding="utf-8") as f:
+                json.dump(libroguardados, f, ensure_ascii=False, indent=4)
             print("Saliendo de la Biblioteca Digital")
             break
